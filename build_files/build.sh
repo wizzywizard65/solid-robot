@@ -22,4 +22,4 @@ dnf5 install -y tmux
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
-systemctl enable cockpit.socket
+
