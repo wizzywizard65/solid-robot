@@ -10,8 +10,21 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-dnf5 install -y tmux
+dnf5 install -y distrobox flakpak-spawn gnome-theme-extra systemd-nspawn tailscale 
+dnf5 install -y --allowerasing \
+    ffmpeg \
+    ffmpegthumbnailer \
+    gstreamer1-vaapi \
+    libavcodec-freeworld
+dnf5 install -y \
+    gstreamer1-plugin-openh264 \
+    libva-intel-driver \
+    mozilla-openh264
 
+dnf5 install -y gcc make libxcrypt-compat && \
+    dnf5 install -y \
+        https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
+        https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 # Use a COPR Example:
 #
 # dnf5 -y copr enable ublue-os/staging
