@@ -14,12 +14,13 @@ dnf5 install -y distrobox  tailscale
 dnf5 install -y --allowerasing \
     ffmpeg \
     ffmpegthumbnailer \
-    gstreamer1-vaapi \
+    gstreamer1-vaapi 
     
 dnf5 install -y \
     gstreamer1-plugin-openh264 \
-    libva-intel-driver \
     mozilla-openh264
+
+dnf5 -y remove firefox
 
 dnf5 install -y gcc make libxcrypt-compat && \
     dnf5 install -y \
