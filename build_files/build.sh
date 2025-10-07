@@ -15,7 +15,7 @@ dnf5 install -y --allowerasing \
     ffmpeg \
     ffmpegthumbnailer \
     gstreamer1-vaapi \
-    libavcodec-freeworld
+    
 dnf5 install -y \
     gstreamer1-plugin-openh264 \
     libva-intel-driver \
