@@ -5,10 +5,10 @@ COPY build_files /
 # Base Image
 FROM quay.io/fedora/fedora-silverblue:43
 
-RUN dnf install -y yum-utils && \
-	dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo && \
-	dnf install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin && \
-	dnf clean all && \
+RUN dnf5 install -y yum-utils && \
+	dnf5 config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo && \
+	dnf5 install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin && \
+	dnf5 clean all && \
 	systemctl enable docker
 
 
