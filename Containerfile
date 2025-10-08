@@ -3,16 +3,9 @@ FROM scratch AS ctx
 COPY build_files /
 
 # Base Image
-FROM quay.io/fedora/fedora-silverblue:43
-
-RUN dnf5 install -y yum-utils && \
-	dnf5 config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo && \
-	dnf5 install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin && \
-	dnf5 clean all && \
-	systemctl enable docker
+FROM ghcr.io/ublue-os/bluefin-dx:latest
 
 
-COPY /system_files /system_files
 
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:latest
