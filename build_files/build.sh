@@ -9,9 +9,7 @@ set -ouex pipefail
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
-dnf5 install  -y https://packages.microsoft.com/yumrepos/vscode
-dnf5 install  -y https://download.docker.com/linux/fedora/$releasever/$basearch/stable
-dnf5 install  -y https://download.docker.com/linux/fedora/$releasever/$basearch/test
+dnf5  config-manager addrepo --from-reposfile='/system_files/etc/yum.repos.d/vscode.repo' 
 
 # this installs a package from fedora repos
 dnf5 install -y  tmux code docker-buildx-plugin docker-ce docker-ce-cli docker-compose-plugin docker-model-plugin distrobox gnome-tweaks
