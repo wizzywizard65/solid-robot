@@ -5,6 +5,12 @@ COPY build_files /
 # Base Image
 FROM quay.io/fedora/fedora-silverblue:43
 
+RUN dnf install -y yum-utils && \
+	dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo && \
+	dnf install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin && \
+	dnf clean all && \
+	systemctl enable docker
+
 
 COPY /system_files /system_files
 
