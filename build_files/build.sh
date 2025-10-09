@@ -32,5 +32,5 @@ dnf5 install -y jetbrains-mono-fonts rsms-inter-fonts
 systemctl enable podman.socket
 systemctl enable docker.socket
 
-
+dnf clean all
 
