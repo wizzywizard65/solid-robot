@@ -16,7 +16,8 @@ dnf5 install -y  tmux code gnome-extensions gnome-tweaks distrobox docker-buildx
 
 dnf5 remove -y firefox
 
-
+#Fonts
+dnf5 install -y jetbrains-mono-fonts rsms-inter-fonts
 
  
 # Use a COPR Example:
