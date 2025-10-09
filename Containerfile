@@ -1,11 +1,12 @@
 # Allow build scripts to be referenced without being copied into the final image
 FROM scratch AS ctx
 COPY build_files /
-COPY system_files /
+
 
 # Base Image
-FROM ghcr.io/ublue-os/bluefin-dx:latest
+FROM quay.io/fedora/fedora-silverblue:43
 
+COPY system_files /
 
 
 ## Other possible base images include:
