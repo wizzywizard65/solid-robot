@@ -12,7 +12,9 @@ set -ouex pipefail
 
 
 # this installs a package from fedora repos
-dnf5 install -y  tmux code gnome-extension-manager gnome-tweaks
+dnf5 install -y  tmux code gnome-extensions gnome-tweaks distrobox docker-buildx-plugin docker-ce docker-ce-cli docker-compose-plugin docker-model-plugin flatpak-builder podman-bootc podman-compose podman-machine podman-tui podmansh fastfetch btop
+
+dnf5 remove -y firefox
 
 
 
@@ -27,7 +29,7 @@ dnf5 install -y  tmux code gnome-extension-manager gnome-tweaks
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
-
+systemctl enable docker.socket
 
 
 
