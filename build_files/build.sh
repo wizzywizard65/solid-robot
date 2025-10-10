@@ -13,7 +13,7 @@ set -ouex pipefail
 
 # this installs a package from fedora repos
 
-dnf  group install gnome-desktop base-graphical container-management core fonts hardware-support multimedia networkmanager-submodules printing 
+dnf5  group install gnome-desktop base-graphical container-management core fonts hardware-support multimedia networkmanager-submodules printing -y 
 
 
 dnf5 install -y tmux code gnome-extensions gnome-tweaks distrobox docker-buildx-plugin docker-ce docker-ce-cli docker-compose-plugin docker-model-plugin flatpak-builder 
