@@ -12,9 +12,9 @@ set -ouex pipefail
 
 
 # this installs a package from fedora repos
-dnf5 install -y  tmux code gnome-extensions gnome-tweaks distrobox docker-buildx-plugin docker-ce docker-ce-cli docker-compose-plugin docker-model-plugin flatpak-builder /
- podman-compose podman-machine podman-tui podmansh fastfetch btop /
- gnome-shell-extension-dash-to-dock virt-manager tailscale 
+dnf5 install -y tmux code gnome-extensions gnome-tweaks distrobox docker-buildx-plugin docker-ce docker-ce-cli docker-compose-plugin docker-model-plugin flatpak-builder 
+dnf5 install -y podman-compose podman-machine podman-tui podmansh fastfetch btop 
+dnf5 install -y gnome-shell-extension-dash-to-dock virt-manager tailscale 
 
 dnf5 remove -y firefox
 
