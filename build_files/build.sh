@@ -43,7 +43,7 @@ dnf5 -y copr disable gmaglione/podman-bootc
 systemctl enable podman.socket
 systemctl enable docker.socket
 systemctl enable tailscaled
-systemctl set-default graphical.target
+#systemctl set-default graphical.target
 
 dnf clean all
 
