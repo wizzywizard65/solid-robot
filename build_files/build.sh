@@ -12,6 +12,10 @@ set -ouex pipefail
 
 
 # this installs a package from fedora repos
+
+dnf  group install gnome-desktop base-graphical container-management core fonts hardware-support muiltimedia networkmanager-submodules printing workstation-product
+
+
 dnf5 install -y tmux code gnome-extensions gnome-tweaks distrobox docker-buildx-plugin docker-ce docker-ce-cli docker-compose-plugin docker-model-plugin flatpak-builder 
 dnf5 install -y podman-compose podman-machine podman-tui podmansh fastfetch btop 
 dnf5 install -y gnome-shell-extension-dash-to-dock virt-manager tailscale 
@@ -39,7 +43,7 @@ dnf5 -y copr disable gmaglione/podman-bootc
 systemctl enable podman.socket
 systemctl enable docker.socket
 systemctl enable tailscaled
-
+systemctl set-default graphical.target
 
 dnf clean all
 
